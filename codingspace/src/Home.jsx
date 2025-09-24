@@ -58,7 +58,11 @@ export default function Home() {
             maxWidth: "900px",
             margin: "0 auto",
             textAlign: "center",
-            paddingTop: "50px",
+            paddingTop: "0px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            minHeight: "100vh",
           }}
         >
           <div style={{ position: "relative", display: "inline-block", marginBottom: "18px" }}>
@@ -68,10 +72,10 @@ export default function Home() {
               alt="Coding Playground Decorative Logo"
               style={{
                 position: "absolute",
-                left: "-110px",
-                top: "0px",
-                width: "110px",
-                height: "110px",
+                left: "-40px", // 0px gap: left = -width
+                top: "-0px",   // Slightly above the text
+                width: "90px",
+                height: "90px",
                 zIndex: 4,
               }}
             />
@@ -92,12 +96,12 @@ export default function Home() {
               Building People. Building <span id="products-keyword">Products</span>.<br />
               Building the Future.
             </h1>
-            {/* Arrow image below "Products", curving around the paragraph */}
+            {/* Arrow image below "Products" */}
             <span
               style={{
                 position: "absolute",
-                left: "620px", // Moved further to the right
-                top: "60px", // Right below the headline
+                left: "700px",
+                top: "85px",
                 zIndex: 5,
               }}
             >
@@ -105,7 +109,7 @@ export default function Home() {
                 src={arrowImg}
                 alt="Decorative Arrow"
                 style={{
-                  width: "180px", // Reduced size for better proportions
+                  width: "180px",
                   height: "auto",
                   pointerEvents: "none",
                   display: "block",

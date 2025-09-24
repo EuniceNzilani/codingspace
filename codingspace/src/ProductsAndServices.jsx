@@ -2,6 +2,10 @@ import React from "react";
 import group39 from "./assets/Group 39.png";
 
 export default function ProductServices() {
+  // Reduced card size by 10px
+  const cardWidth = 250; // px, was 260px
+  const cardHeight = 240; // px, was 250px
+
   return (
     <div
       style={{
@@ -17,7 +21,7 @@ export default function ProductServices() {
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "40px 20px 70px 20px",
+          padding: "24px 8px 40px 8px",
           position: "relative",
         }}
       >
@@ -51,32 +55,34 @@ export default function ProductServices() {
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: "54px", // More space between boxes
-            marginBottom: "40px",
+            gap: "56px", // Space between boxes
+            marginBottom: "32px",
             flexWrap: "wrap",
           }}
         >
           {/* Software Development */}
           <div
             style={{
-              flex: "1 1 250px",
-              minWidth: "220px",
-              maxWidth: "300px",
+              flex: `0 0 ${cardWidth}px`,
+              minWidth: `${cardWidth}px`,
+              maxWidth: `${cardWidth}px`,
+              height: `${cardHeight}px`,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               margin: "0",
+              boxSizing: "border-box",
             }}
           >
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1.12rem",
+                fontSize: "1rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "5px 0",
+                padding: "4px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
@@ -89,13 +95,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "20px 15px",
+                padding: "16px 12px",
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <div style={{ color: "#242424", fontSize: "1rem", lineHeight: "1.75" }}>
+              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
                 Web Development<br />
                 Mobile Apps (iOS & Android)<br />
                 UI/UX Design<br />
@@ -106,24 +116,26 @@ export default function ProductServices() {
           {/* Tech Academy */}
           <div
             style={{
-              flex: "1 1 250px",
-              minWidth: "220px",
-              maxWidth: "300px",
+              flex: `0 0 ${cardWidth}px`,
+              minWidth: `${cardWidth}px`,
+              maxWidth: `${cardWidth}px`,
+              height: `${cardHeight}px`,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               margin: "0",
+              boxSizing: "border-box",
             }}
           >
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1.12rem",
+                fontSize: "1rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "5px 0",
+                padding: "4px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
@@ -136,13 +148,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "20px 15px",
+                padding: "16px 12px",
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <div style={{ color: "#242424", fontSize: "1rem", lineHeight: "1.75" }}>
+              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
                 Beginner to expert coding programs<br />
                 No-code Tools & AI Integration<br />
                 Mentorship + Hands-On Projects<br />
@@ -153,24 +169,26 @@ export default function ProductServices() {
           {/* Innovation Hub */}
           <div
             style={{
-              flex: "1 1 250px",
-              minWidth: "220px",
-              maxWidth: "300px",
+              flex: `0 0 ${cardWidth}px`,
+              minWidth: `${cardWidth}px`,
+              maxWidth: `${cardWidth}px`,
+              height: `${cardHeight}px`,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               margin: "0",
+              boxSizing: "border-box",
             }}
           >
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1.12rem",
+                fontSize: "1rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "5px 0",
+                padding: "4px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
@@ -183,13 +201,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "20px 15px",
+                padding: "16px 12px",
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <div style={{ color: "#242424", fontSize: "1rem", lineHeight: "1.75" }}>
+              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
                 Start-Up Consultation<br />
                 MVP(Minimum Viable Product) Building<br />
                 Growth & Scaling Support
@@ -199,28 +221,28 @@ export default function ProductServices() {
         </div>
 
         {/* Special Programs Section */}
-        <div style={{ marginTop: "44px" }}>
-          <h2
-            style={{
-              color: "#170961",
-              fontWeight: 700,
-              fontFamily: "'Montserrat', Arial, sans-serif",
-              fontSize: "1.5rem",
-              marginBottom: "16px",
-            }}
-          >
-            Special Programs
-          </h2>
+        <div style={{ marginTop: "32px" }}>
           <div
             style={{
               display: "flex",
               alignItems: "flex-start",
-              gap: "36px",
+              gap: "28px",
               flexWrap: "wrap",
             }}
           >
             {/* Text */}
             <div style={{ flex: "1 1 370px", minWidth: "320px" }}>
+              <h2
+                style={{
+                  color: "#170961",
+                  fontWeight: 700,
+                  fontFamily: "'Montserrat', Arial, sans-serif",
+                  fontSize: "1.5rem",
+                  marginBottom: "16px",
+                }}
+              >
+                Special Programs
+              </h2>
               <div style={{ color: "#242424", fontSize: "1.08rem", lineHeight: "1.7" }}>
                 We also extend our training to schools through our Coding & Robotics for Schools program. Introducing primary and secondary students to coding, robotics, and problem-solving early. If you’re a school administrator or teacher reach out to us let's work together.
               </div>
@@ -231,10 +253,11 @@ export default function ProductServices() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
-                maxWidth: "220px",
-                flex: "1 1 220px",
-                alignSelf: "center",
+                maxWidth: "340px",
+                flex: "1 1 340px",
+                alignSelf: "flex-start",
+                marginTop: "0px",
+                paddingTop: "0px",
               }}
             >
               <img
@@ -242,7 +265,7 @@ export default function ProductServices() {
                 alt="Coding and robotics"
                 style={{
                   width: "100%",
-                  height: "140px",
+                  height: "210px",
                   objectFit: "cover",
                   borderRadius: "10px",
                   boxShadow: "0 2px 12px rgba(36,36,36,0.08)",
