@@ -513,28 +513,119 @@ export default function JoinAcademy() {
           </div>
         </section>
 
-        {/* Training Programs (Placeholder) */}
-        <section ref={programsRef} style={{
+        {/* Training Programs */}
+        <section ref={programsRef}
+          style={{
+            background: "#E6E4F5",
+            padding: "54px 0 70px",
+            minHeight: "240px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}>
+          <div style={{
+            maxWidth: "800px",
+            width: "100%",
+            margin: "0 auto",
+            textAlign: "center"
+          }}>
+            <h2 style={{
+              color: "#1C176C",
+              fontWeight: 900,
+              fontFamily: "'Montserrat', Arial, sans-serif",
+              fontSize: "2.18rem",
+              marginBottom: "24px",
+              letterSpacing: "-1px"
+            }}>
+              Training Programs
+            </h2>
+            <div style={{
+              color: "#222",
+              fontSize: "1.15rem",
+              marginBottom: "30px"
+            }}>
+              “We offer structured programs across web & mobile development, UI/UX design, robotics, and more. Explore the full list of roles, languages, and tools we train in our Training Programs.”
+            </div>
+            <button
+              style={{
+                background: "#2516A1",
+                color: "#fff",
+                border: "none",
+                borderRadius: "13px",
+                fontSize: "1.13rem",
+                fontWeight: 700,
+                padding: "16px 44px",
+                boxShadow: "0 6px 18px rgba(36,36,36,0.13)",
+                cursor: "pointer",
+                margin: "0 auto",
+                outline: "none"
+              }}
+            >
+              Explore Training Programs
+            </button>
+          </div>
+        </section>
+
+        {/* Call To Action: Start your journey */}
+        <section style={{
           background: "#fff",
-          padding: "54px 0 70px",
+          padding: "54px 0 110px",
           minHeight: "180px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center"
         }}>
           <div style={{
-            maxWidth: "1100px",
+            maxWidth: "900px",
             width: "100%",
             margin: "0 auto",
-            textAlign: "center",
-            color: "#170961",
-            fontWeight: 700,
-            fontSize: "1.3rem",
-            fontFamily: "'Montserrat', Arial, sans-serif",
-            opacity: 0.5
+            textAlign: "left"
           }}>
-            {/* Placeholder for training programs section */}
-            Training programs section coming soon...
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "20px"
+            }}>
+              <div>
+                <h2 style={{
+                  color: "#2516A1",
+                  fontWeight: 900,
+                  fontFamily: "'Montserrat', Arial, sans-serif",
+                  fontSize: "2rem",
+                  marginBottom: "14px",
+                  letterSpacing: "-1px"
+                }}>
+                  Start Your<br />Journey Today!
+                </h2>
+                <div style={{
+                  color: "#222",
+                  fontSize: "1.07rem"
+                }}>
+                  Apply now to kickstart your career with<br />
+                  CodingPlayground Technology
+                </div>
+              </div>
+              <div>
+                <button
+                  style={{
+                    background: "#2516A1",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "13px",
+                    fontSize: "1.13rem",
+                    fontWeight: 700,
+                    padding: "16px 44px",
+                    boxShadow: "0 6px 18px rgba(36,36,36,0.13)",
+                    cursor: "pointer",
+                    outline: "none",
+                    marginTop: "16px"
+                  }}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </div>
           </div>
         </section>
       </div>

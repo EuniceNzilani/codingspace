@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-// Success Popup for submission as in ![image5](image5)
 function SuccessPopup({ open, onClose }) {
   if (!open) return null;
   return (
@@ -20,7 +19,6 @@ function SuccessPopup({ open, onClose }) {
         maxWidth: "90vw"
       }}>
         <div style={{ marginBottom: "18px" }}>
-          {/* Green success checkmark with dots */}
           <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
             <circle cx="27" cy="27" r="27" fill="#22C55E"/>
             <path d="M18 28l6.3 6.3L36 22.6" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -55,6 +53,20 @@ function SuccessPopup({ open, onClose }) {
   );
 }
 
+function Field({ label, children }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", marginBottom: "18px" }}>
+      <label style={{
+        fontWeight: 600,
+        fontSize: "1rem",
+        marginBottom: "6px",
+        color: "#242424"
+      }}>{label}</label>
+      {children}
+    </div>
+  );
+}
+
 export default function StartProjectForm() {
   const [form, setForm] = useState({
     name: "",
@@ -67,8 +79,11 @@ export default function StartProjectForm() {
   });
   const [popupOpen, setPopupOpen] = useState(false);
 
+  const timelineDateRef = useRef(null);
+
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm(f => ({ ...f, [name]: value }));
   }
 
   function handleSubmit(e) {
@@ -89,14 +104,51 @@ export default function StartProjectForm() {
     });
   }
 
+  function handleTimelineCalendarClick(e) {
+    e.preventDefault();
+    if (timelineDateRef.current) {
+      timelineDateRef.current.showPicker
+        ? timelineDateRef.current.showPicker()
+        : timelineDateRef.current.click();
+    }
+  }
+
+  function handleTimelineDateChange(e) {
+    const value = e.target.value;
+    setForm(f => ({
+      ...f,
+      timeline: value
+    }));
+  }
+
+  // Common input style for all fields
+  const inputStyle = {
+    padding: "12px",
+    fontSize: "1rem",
+    borderRadius: "10px",
+    border: "1px solid #ececec",
+    outline: "none",
+    boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+    background: "#fff", // Force white background always
+    color: "#242424",
+    transition: "background 0s", // Prevent background color transitions
+  };
+
   return (
-    <div style={{
-      background: "#fff",
-      minHeight: "100vh",
-      fontFamily: "'Inter', Arial, sans-serif",
-      width: "100vw",
-      overflowX: "hidden",
-    }}>
+    <div style={{ background: "#fff", minHeight: "100vh", fontFamily: "'Inter', Arial, sans-serif", width: "100vw", overflowX: "hidden" }}>
+      {/* Autofill fix for Chrome, Edge, Safari */}
+      <style>{`
+        input:-webkit-autofill,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:active {
+          -webkit-box-shadow: 0 2px 8px rgba(36,36,36,0.09) 0px 0px 0px 1000px #fff inset !important;
+          box-shadow: 0 2px 8px rgba(36,36,36,0.09) 0px 0px 0px 1000px #fff inset !important;
+          background-color: #fff !important;
+          color: #242424 !important;
+          caret-color: #242424 !important;
+        }
+      `}</style>
       <main style={{
         maxWidth: "900px",
         margin: "0 auto",
@@ -125,15 +177,18 @@ export default function StartProjectForm() {
         <form
           style={{
             background: "#fff",
-            borderRadius: "12px",
+            borderRadius: "18px",
             boxShadow: "0 2px 16px rgba(36,36,36,0.09)",
             padding: "36px 38px 24px 38px",
             maxWidth: "765px",
             margin: "0 auto",
             border: "1px solid #ececec",
-            marginBottom: "26px"
+            marginBottom: "26px",
+            display: "flex",
+            flexDirection: "column"
           }}
           onSubmit={handleSubmit}
+          autoComplete="off"
         >
           <div style={{
             fontWeight: 700,
@@ -145,189 +200,157 @@ export default function StartProjectForm() {
           }}>
             Basic Details
           </div>
-          {/* Full Name */}
-          <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Full Name</label>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            required
-            placeholder="Enter your Full name"
-            style={{
-              marginBottom: "18px",
-              padding: "12px",
-              fontSize: "1rem",
-              borderRadius: "10px",
-              border: "none",
-              outline: "none",
-              boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-            }}
-          />
-          {/* Email Address */}
-          <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Email Address</label>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            required
-            placeholder="Enter your email address"
-            style={{
-              marginBottom: "18px",
-              padding: "12px",
-              fontSize: "1rem",
-              borderRadius: "10px",
-              border: "none",
-              outline: "none",
-              boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-            }}
-          />
-          {/* Company/Organization */}
-          <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Company/Organization</label>
-          <input
-            type="text"
-            name="company"
-            value={form.company}
-            onChange={handleChange}
-            required
-            placeholder="Your Company Name"
-            style={{
-              marginBottom: "18px",
-              padding: "12px",
-              fontSize: "1rem",
-              borderRadius: "10px",
-              border: "none",
-              outline: "none",
-              boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-            }}
-          />
-          {/* Project Type and Budget Range */}
-          <div style={{ display: "flex", gap: "18px", marginBottom: "18px" }}>
-            <div style={{ flex: 1 }}>
-              <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Project Type</label>
-              <select
-                name="projectType"
-                value={form.projectType}
-                onChange={handleChange}
-                required
-                style={{
-                  marginBottom: "0px",
-                  padding: "12px",
-                  fontSize: "1rem",
-                  borderRadius: "10px",
-                  border: "none",
-                  outline: "none",
-                  boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
-                  background: "#fff"
-                }}
-              >
-                <option value="" disabled>Select type of project</option>
-                <option value="Website">Website</option>
-                <option value="Mobile App">Mobile App</option>
-                <option value="Web App">Web App</option>
-                <option value="E-Commerce">E-Commerce</option>
-                <option value="Custom Software">Custom Software</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div style={{ flex: 1 }}>
-              <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Budget Range</label>
-              <input
-                type="text"
-                name="budget"
-                value={form.budget}
-                onChange={handleChange}
-                required
-                placeholder="Enter your budget range"
-                style={{
-                  marginBottom: "0px",
-                  padding: "12px",
-                  fontSize: "1rem",
-                  borderRadius: "10px",
-                  border: "none",
-                  outline: "none",
-                  boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-                }}
-              />
-            </div>
-          </div>
-          {/* Timeline */}
-          <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Timeline</label>
-          <div style={{ position: "relative", marginBottom: "18px" }}>
+          <Field label="Full Name">
             <input
               type="text"
-              name="timeline"
-              value={form.timeline}
+              name="name"
+              value={form.name}
               onChange={handleChange}
               required
-              placeholder="What is your preferred timeline"
-              style={{
-                width: "100%",
-                padding: "12px",
-                fontSize: "1rem",
-                borderRadius: "10px",
-                border: "none",
-                outline: "none",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-              }}
+              autoComplete="off"
+              placeholder="Enter your Full name"
+              style={inputStyle}
             />
-            {/* Calendar icon */}
-            <span style={{
-              position: "absolute",
-              right: "14px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              pointerEvents: "none"
-            }}>
-              <svg width="22" height="22" fill="none">
-                <rect x="2" y="5" width="18" height="14" rx="3" stroke="#170961" strokeWidth="2"/>
-                <path d="M7 2v3M15 2v3" stroke="#170961" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="7" cy="11" r="1" fill="#170961"/>
-                <circle cx="11" cy="11" r="1" fill="#170961"/>
-                <circle cx="15" cy="11" r="1" fill="#170961"/>
-              </svg>
-            </span>
+          </Field>
+          <Field label="Email Address">
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              autoComplete="off"
+              placeholder="Enter your email address"
+              style={inputStyle}
+            />
+          </Field>
+          <Field label="Company/Organization">
+            <input
+              type="text"
+              name="company"
+              value={form.company}
+              onChange={handleChange}
+              required
+              autoComplete="off"
+              placeholder="Your Company Name"
+              style={inputStyle}
+            />
+          </Field>
+          <div style={{ display: "flex", gap: "18px", marginBottom: "18px" }}>
+            <div style={{ flex: 1 }}>
+              <Field label="Project Type">
+                <select
+                  name="projectType"
+                  value={form.projectType}
+                  onChange={handleChange}
+                  required
+                  style={inputStyle}
+                >
+                  <option value="" disabled>Select type of project</option>
+                  <option value="Website">Website</option>
+                  <option value="Mobile App">Mobile App</option>
+                  <option value="Web App">Web App</option>
+                  <option value="E-Commerce">E-Commerce</option>
+                  <option value="Custom Software">Custom Software</option>
+                  <option value="Other">Other</option>
+                </select>
+              </Field>
+            </div>
+            <div style={{ flex: 1 }}>
+              <Field label="Budget Range">
+                <input
+                  type="text"
+                  name="budget"
+                  value={form.budget}
+                  onChange={handleChange}
+                  required
+                  autoComplete="off"
+                  placeholder="Enter your budget range"
+                  style={inputStyle}
+                />
+              </Field>
+            </div>
           </div>
-          {/* Brief Description */}
-          <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Brief Description</label>
-          <textarea
-            name="description"
-            value={form.description}
-            onChange={handleChange}
-            required
-            placeholder="Explain briefly about your project"
-            rows={4}
-            style={{
-              marginBottom: "18px",
-              padding: "12px",
-              fontSize: "1rem",
-              borderRadius: "10px",
-              border: "none",
-              outline: "none",
-              boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
-              resize: "none"
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              background: "#170961",
-              color: "#fff",
-              border: "none",
-              borderRadius: "9px",
-              fontSize: "1.15rem",
-              fontWeight: 600,
-              padding: "13px 0",
-              boxShadow: "0 2px 8px rgba(36,36,36,0.13)",
-              cursor: "pointer",
-              width: "180px",
-              alignSelf: "center",
-              marginTop: "18px"
-            }}
-          >
-            Submit
-          </button>
+          <Field label="Timeline">
+            <div style={{ position: "relative", display: "flex" }}>
+              <input
+                type="text"
+                name="timeline"
+                value={form.timeline}
+                onChange={handleChange}
+                required
+                autoComplete="off"
+                placeholder="What is your preferred timeline"
+                style={{ ...inputStyle, width: "100%" }}
+              />
+              <input
+                ref={timelineDateRef}
+                type="date"
+                style={{
+                  display: "none"
+                }}
+                onChange={handleTimelineDateChange}
+              />
+              <button
+                onClick={handleTimelineCalendarClick}
+                tabIndex={0}
+                type="button"
+                aria-label="Open calendar"
+                style={{
+                  background: "none",
+                  border: "none",
+                  position: "absolute",
+                  right: "8px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  padding: 0,
+                  marginLeft: "8px",
+                  outline: "none"
+                }}
+              >
+                <svg width="22" height="22" fill="none">
+                  <rect x="2" y="5" width="18" height="14" rx="3" stroke="#242424" strokeWidth="2"/>
+                  <path d="M7 2v3M15 2v3" stroke="#242424" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="7" cy="11" r="1" fill="#242424"/>
+                  <circle cx="11" cy="11" r="1" fill="#242424"/>
+                  <circle cx="15" cy="11" r="1" fill="#242424"/>
+                </svg>
+              </button>
+            </div>
+          </Field>
+          <Field label="Brief Description">
+            <textarea
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              required
+              autoComplete="off"
+              placeholder="Explain briefly about your project"
+              rows={4}
+              style={{ ...inputStyle, resize: "none" }}
+            />
+          </Field>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "18px" }}>
+            <button
+              type="submit"
+              style={{
+                background: "#170961",
+                color: "#fff",
+                border: "none",
+                borderRadius: "9px",
+                fontSize: "1.15rem",
+                fontWeight: 600,
+                padding: "13px 0",
+                boxShadow: "0 2px 8px rgba(36,36,36,0.13)",
+                cursor: "pointer",
+                width: "180px",
+                textAlign: "center"
+              }}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </main>
       <SuccessPopup open={popupOpen} onClose={handlePopupClose} />

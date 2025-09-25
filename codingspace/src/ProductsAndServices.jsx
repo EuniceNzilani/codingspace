@@ -2,9 +2,9 @@ import React from "react";
 import group39 from "./assets/Group 39.png";
 
 export default function ProductServices() {
-  // Reduced card size by 10px
-  const cardWidth = 250; // px, was 260px
-  const cardHeight = 240; // px, was 250px
+  // Reduce box size by another 10px, so total -20px
+  const cardWidth = 240; // px
+  const cardHeight = 230; // px
 
   return (
     <div
@@ -55,7 +55,7 @@ export default function ProductServices() {
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: "56px", // Space between boxes
+            gap: "56px",
             marginBottom: "32px",
             flexWrap: "wrap",
           }}
@@ -77,16 +77,17 @@ export default function ProductServices() {
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1rem",
+                fontSize: "0.95rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "4px 0",
+                padding: "3px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
                 fontFamily: "'Montserrat', Arial, sans-serif",
+                marginBottom: 0,
               }}
             >
               Software Development
@@ -95,17 +96,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "16px 12px",
+                padding: "10px 10px 8px 10px", // reduced top padding
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "flex-start", // content starts at top
               }}
             >
-              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
+              <div style={{ color: "#242424", fontSize: "0.83rem", lineHeight: "1.9" }}>
                 Web Development<br />
                 Mobile Apps (iOS & Android)<br />
                 UI/UX Design<br />
@@ -130,16 +131,17 @@ export default function ProductServices() {
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1rem",
+                fontSize: "0.95rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "4px 0",
+                padding: "3px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
                 fontFamily: "'Montserrat', Arial, sans-serif",
+                marginBottom: 0,
               }}
             >
               Tech Academy
@@ -148,17 +150,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "16px 12px",
+                padding: "10px 10px 8px 10px", // reduced top padding
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "flex-start",
               }}
             >
-              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
+              <div style={{ color: "#242424", fontSize: "0.83rem", lineHeight: "1.9" }}>
                 Beginner to expert coding programs<br />
                 No-code Tools & AI Integration<br />
                 Mentorship + Hands-On Projects<br />
@@ -183,16 +185,17 @@ export default function ProductServices() {
             <div
               style={{
                 fontWeight: 700,
-                fontSize: "1rem",
+                fontSize: "0.95rem",
                 color: "#170961",
                 border: "2px solid #170961",
                 borderRadius: "9px 9px 0 0",
                 background: "#fff",
-                padding: "4px 0",
+                padding: "3px 0",
                 boxSizing: "border-box",
                 width: "100%",
                 textAlign: "center",
                 fontFamily: "'Montserrat', Arial, sans-serif",
+                marginBottom: 0,
               }}
             >
               Innovation Hub
@@ -201,17 +204,17 @@ export default function ProductServices() {
               style={{
                 background: "#D3CCE6",
                 borderRadius: "0 0 15px 15px",
-                padding: "16px 12px",
+                padding: "10px 10px 8px 10px", // reduced top padding
                 boxShadow: "0 4px 24px rgba(36,36,36,0.07)",
                 textAlign: "center",
                 width: "100%",
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "flex-start",
               }}
             >
-              <div style={{ color: "#242424", fontSize: "0.8rem", lineHeight: "1.5" }}>
+              <div style={{ color: "#242424", fontSize: "0.83rem", lineHeight: "1.9" }}>
                 Start-Up Consultation<br />
                 MVP(Minimum Viable Product) Building<br />
                 Growth & Scaling Support
@@ -253,7 +256,7 @@ export default function ProductServices() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                maxWidth: "340px",
+                maxWidth: "440px",
                 flex: "1 1 340px",
                 alignSelf: "flex-start",
                 marginTop: "0px",
@@ -265,7 +268,7 @@ export default function ProductServices() {
                 alt="Coding and robotics"
                 style={{
                   width: "100%",
-                  height: "210px",
+                  height: "310px",
                   objectFit: "cover",
                   borderRadius: "10px",
                   boxShadow: "0 2px 12px rgba(36,36,36,0.08)",

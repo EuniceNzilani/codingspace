@@ -4,7 +4,7 @@ import networkLeft from "./assets/6.png";
 import networkRight from "./assets/7.png";
 import arrowImg from "./assets/5.png";
 
-export default function Home() {
+export default function Home({ onStartProject, onApplyNow }) {
   return (
     <div
       style={{
@@ -151,6 +151,7 @@ export default function Home() {
                 cursor: "pointer",
                 transition: "background 0.2s",
               }}
+              onClick={onStartProject}
             >
               Start a Project
             </button>
@@ -167,6 +168,7 @@ export default function Home() {
                 cursor: "pointer",
                 transition: "background 0.2s",
               }}
+              onClick={onApplyNow}
             >
               Join our Academy
             </button>

@@ -1,8 +1,13 @@
 import React from "react";
-
 import weAreHiring from "./assets/image 17.png"; // Ensure this path matches your project
 
-export default function Careers() {
+export default function Careers({ onApply }) {
+  const handleApplyNow = () => {
+    if (onApply) {
+      onApply();
+    }
+  };
+
   return (
     <div style={{
       background: "#fff",
@@ -44,7 +49,7 @@ export default function Careers() {
           maxWidth: "760px",
           lineHeight: "1.7"
         }}>
-          At CodingPlayGround Technologies, we’re building a culture of innovation, creativity, and impact. We welcome passionate people at all levels, including entry-level applicants eager to learn. We also offer internships for beginners looking to hone their skills and grow into professionals.
+          At CodingPlayGround Technologies, we're building a culture of innovation, creativity, and impact. We welcome passionate people at all levels, including entry-level applicants eager to learn. We also offer internships for beginners looking to hone their skills and grow into professionals.
         </div>
         {/* Open roles and hiring image row */}
         <div style={{
@@ -97,18 +102,23 @@ export default function Careers() {
             </ul>
             {/* Apply Now button directly below Video Editor */}
             <div style={{ textAlign: "center", marginTop: "24px" }}>
-              <button style={{
-                background: "#170961",
-                color: "#fff",
-                border: "none",
-                borderRadius: "15px",
-                fontSize: "1.1rem",
-                fontWeight: 500,
-                padding: "16px 38px",
-                boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
-                cursor: "pointer",
-                transition: "background 0.2s"
-              }}>
+              <button 
+                onClick={handleApplyNow}
+                style={{
+                  background: "#170961",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "15px",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  padding: "16px 38px",
+                  boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
+                  cursor: "pointer",
+                  transition: "background 0.2s"
+                }}
+                onMouseEnter={(e) => e.target.style.background = "#1a0b70"}
+                onMouseLeave={(e) => e.target.style.background = "#170961"}
+              >
                 Apply Now
               </button>
             </div>

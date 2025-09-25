@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 
+// ICON IMPORTS
+import headOfficeIcon from "./assets/head office.png";
+import emailIcon from "./assets/email.png";
+import contactUsIcon from "./assets/contact us.png";
+import instagramIcon from "./assets/ig.png";
+import whatsappIcon from "./assets/whatsapp.png";
+import facebookIcon from "./assets/facebook.png";
+import newIcon from "./assets/new.png";
+
 export default function ContactUs() {
   // Simple form state
   const [form, setForm] = useState({ name: "", subject: "", message: "" });
@@ -29,7 +38,7 @@ export default function ContactUs() {
         flex: "1"
       }}>
         <h1 style={{
-          color: "#170961", // Use true brand blue
+          color: "#170961",
           fontWeight: 900,
           fontFamily: "'Montserrat', Arial, sans-serif",
           fontSize: "2.7rem",
@@ -76,21 +85,14 @@ export default function ContactUs() {
             </div>
             {/* Head Office */}
             <div style={{ display: "flex", alignItems: "flex-start", marginBottom: "20px" }}>
-              <span style={{
-                background: "#170961",
-                color: "#fff",
-                borderRadius: "50%",
+              <img src={headOfficeIcon} alt="Head Office" style={{
                 width: "38px",
                 height: "38px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.3rem",
                 marginRight: "14px",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-              }}>
-                <i className="fa fa-map-marker" />
-              </span>
+                borderRadius: "50%",
+                boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+                background: "#170961"
+              }} />
               <div>
                 <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Head Office</div>
                 <div style={{ color: "#242424", fontSize: "1rem" }}>
@@ -101,21 +103,14 @@ export default function ContactUs() {
             </div>
             {/* Email */}
             <div style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
-              <span style={{
-                background: "#170961",
-                color: "#fff",
-                borderRadius: "50%",
+              <img src={emailIcon} alt="Email" style={{
                 width: "38px",
                 height: "38px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.3rem",
                 marginRight: "14px",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-              }}>
-                <i className="fa fa-envelope" />
-              </span>
+                borderRadius: "50%",
+                boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+                background: "#170961"
+              }} />
               <div>
                 <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Email Us</div>
                 <div style={{ color: "#242424", fontSize: "1rem" }}>
@@ -125,21 +120,14 @@ export default function ContactUs() {
             </div>
             {/* Call Us */}
             <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{
-                background: "#170961",
-                color: "#fff",
-                borderRadius: "50%",
+              <img src={contactUsIcon} alt="Call Us" style={{
                 width: "38px",
                 height: "38px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.3rem",
                 marginRight: "14px",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
-              }}>
-                <i className="fa fa-phone" />
-              </span>
+                borderRadius: "50%",
+                boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+                background: "#170961"
+              }} />
               <div>
                 <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Call Us</div>
                 <div style={{ color: "#242424", fontSize: "1rem" }}>
@@ -228,7 +216,7 @@ export default function ContactUs() {
             <button
               type="submit"
               style={{
-                background: "#170961", // Use true brand blue
+                background: "#170961",
                 color: "#fff",
                 border: "none",
                 borderRadius: "9px",
@@ -250,7 +238,7 @@ export default function ContactUs() {
       </main>
       {/* Footer */}
       <footer style={{
-        background: "#170961", // Use true brand blue
+        background: "#170961",
         color: "#fff",
         padding: "28px 0 12px",
         marginTop: "auto",
@@ -279,14 +267,35 @@ export default function ContactUs() {
                 display: "flex",
                 gap: "16px",
                 justifyContent: "center",
-                fontSize: "1.42rem",
                 marginBottom: "3px"
               }}>
-                {/* True blue icons as in screenshot */}
-                <a href="#" style={{ color: "#170961", background: "#fff", borderRadius: "50%", padding: "4px" }}><i className="fa fa-instagram" /></a>
-                <a href="#" style={{ color: "#170961", background: "#fff", borderRadius: "50%", padding: "4px" }}><i className="fa fa-facebook" /></a>
-                <a href="#" style={{ color: "#170961", background: "#fff", borderRadius: "50%", padding: "4px" }}><i className="fa fa-twitter" /></a>
-                <a href="#" style={{ color: "#170961", background: "#fff", borderRadius: "50%", padding: "4px" }}><i className="fa fa-linkedin" /></a>
+                {[instagramIcon, facebookIcon, whatsappIcon, newIcon].map((src, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: "#fff",
+                      borderRadius: "7px",
+                      width: "30px",
+                      height: "27px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
+                    }}
+                  >
+                    <img
+                      src={src}
+                      alt="Community Icon"
+                      style={{
+                        width: "22px",
+                        height: "22px",
+                        objectFit: "contain",
+                        display: "block"
+                      }}
+                      onError={e => { e.target.style.display = "none"; }}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div style={{ textAlign: "right", fontSize: "1.05rem", minWidth: "180px" }}>
