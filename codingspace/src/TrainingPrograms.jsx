@@ -128,12 +128,12 @@ const nocode = [
   { name: "Zapier", icon: zapierIcon },
 ];
 
-export default function TrainingPrograms() {
+export default function TrainingPrograms({ onApplyNow }) {
   return (
     <div style={{
       background: "#fff",
       minHeight: "100vh",
-      fontFamily: "'Inter', Arial, sans-serif",
+      fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
       overflowX: "hidden",
       width: "100vw"
     }}>
@@ -148,7 +148,7 @@ export default function TrainingPrograms() {
         <h1 style={{
           color: "#170961",
           fontWeight: 900,
-          fontFamily: "'Montserrat', Arial, sans-serif",
+          fontFamily: "'Oswald', Arial, sans-serif", // Oswald for headings
           fontSize: "2.7rem",
           textAlign: "center",
           marginBottom: "18px"
@@ -160,7 +160,8 @@ export default function TrainingPrograms() {
           fontSize: "1.18rem",
           color: "#242424",
           textAlign: "center",
-          marginBottom: "38px"
+          marginBottom: "38px",
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
           Our Software development company offers training programs for future developers, Certificate & Internship Placement is guaranteed
         </div>
@@ -170,7 +171,8 @@ export default function TrainingPrograms() {
             color: "#170961",
             fontWeight: 700,
             fontSize: "1.3rem",
-            marginBottom: "18px"
+            marginBottom: "18px",
+            fontFamily: "'Oswald', Arial, sans-serif" // Oswald for headings
           }}>
             <span style={{ textDecoration: "underline", cursor: "pointer" }}>Roles</span> we train for
           </div>
@@ -196,7 +198,8 @@ export default function TrainingPrograms() {
                   color: "#170961",
                   minWidth: 0,
                   border: "1px solid #ECECEC",
-                  position: "relative"
+                  position: "relative",
+                  fontFamily: "'Nunito', Arial, sans-serif"
                 }}>
                 <div style={{ marginBottom: "12px" }}>{role.icon}</div>
                 {role.title}
@@ -227,11 +230,12 @@ export default function TrainingPrograms() {
               color: "#170961",
               fontWeight: 700,
               fontSize: "1.3rem",
-              marginBottom: "18px"
+              marginBottom: "18px",
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               <span style={{ textDecoration: "underline", cursor: "pointer" }}>Skills</span> you will learn
             </div>
-            <ul style={{ fontSize: "1.08rem", color: "#242424", marginBottom: 0, paddingLeft: 0, listStyle: "none" }}>
+            <ul style={{ fontSize: "1.08rem", color: "#242424", marginBottom: 0, paddingLeft: 0, listStyle: "none", fontFamily: "'Nunito', Arial, sans-serif" }}>
               {skills.map(skill => (
                 <li key={skill} style={{ marginBottom: "14px", display: "flex", alignItems: "center" }}>
                   <span style={{
@@ -263,57 +267,62 @@ export default function TrainingPrograms() {
             color: "#170961",
             fontWeight: 700,
             fontSize: "1.3rem",
-            marginBottom: "18px"
+            marginBottom: "18px",
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>
             <span style={{ textDecoration: "underline", cursor: "pointer" }}>Languages</span> and Tools
           </div>
-          {/* REDUCED SIDE PADDING: Container is now wider and grid is nearly full width */}
           <div style={{
             width: "100%",
             display: "flex",
             flexDirection: "column",
             gap: "20px",
             marginBottom: "18px",
-            alignItems: "center",
+            alignItems: "flex-start",
+            paddingLeft: "20px"
           }}>
-            {toolsGrid.map((row, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: `repeat(${row.length}, 110px)`,
-                  gap: "18px",
-                  justifyContent: "center",
-                  width: "calc(110px * " + row.length + " + 18px * " + (row.length - 1) + ")",
-                  maxWidth: "100vw"
-                }}
-              >
-                {row.map(tool => (
-                  <div key={tool.name}
-                    style={{
-                      background: "#fff",
-                      borderRadius: "50%",
-                      width: "110px",
-                      height: "110px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 2px 12px rgba(36,36,36,0.08)",
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      color: "#170961",
-                      marginBottom: "9px"
-                    }}>
-                    <img src={tool.icon} alt={tool.name} style={{ width: "48px", height: "48px", marginBottom: "8px" }} />
-                    <span>{tool.name}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
+            {toolsGrid.map((row, i) => {
+              const marginLeft = "0px";
+              return (
+                <div
+                  key={i}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: `repeat(${row.length}, 110px)`,
+                    gap: "52px",
+                    justifyContent: "center",
+                    width: "calc(110px * " + row.length + " + 52px * " + (row.length - 1) + ")",
+                    maxWidth: "100vw",
+                    marginLeft: marginLeft
+                  }}
+                >
+                  {row.map(tool => (
+                    <div key={tool.name}
+                      style={{
+                        background: "#fff",
+                        borderRadius: "50%",
+                        width: "110px",
+                        height: "110px",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 2px 12px rgba(36,36,36,0.08)",
+                        fontWeight: 600,
+                        fontSize: "1rem",
+                        color: "#170961",
+                        marginBottom: "9px",
+                        fontFamily: "'Nunito', Arial, sans-serif"
+                      }}>
+                      <img src={tool.icon} alt={tool.name} style={{ width: "48px", height: "48px", marginBottom: "8px" }} />
+                      <span>{tool.name}</span>
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </section>
-        {/* --- END OF FILE AS PER LATEST LAYOUT --- */}
         <div style={{
           display: "flex",
           flexDirection: "row",
@@ -328,7 +337,8 @@ export default function TrainingPrograms() {
               color: "#170961",
               fontWeight: 700,
               fontSize: "1.3rem",
-              marginBottom: "18px"
+              marginBottom: "18px",
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               <span style={{ textDecoration: "underline", cursor: "pointer" }}>No-Code Tools</span>
             </div>
@@ -351,7 +361,8 @@ export default function TrainingPrograms() {
                     boxShadow: "0 2px 12px rgba(36,36,36,0.08)",
                     fontWeight: 600,
                     fontSize: "1rem",
-                    color: "#170961"
+                    color: "#170961",
+                    fontFamily: "'Nunito', Arial, sans-serif"
                   }}>
                   <img src={tool.icon} alt={tool.name} style={{
                     width: "48px",
@@ -363,50 +374,93 @@ export default function TrainingPrograms() {
                 </div>
               ))}
             </div>
-            {/* Start Your Journey Today and Apply Now BELOW the icons */}
+            {/* Start Your Journey Today and Apply Now positioned horizontally */}
             <div style={{
-              margin: "0 auto",
-              maxWidth: "350px",
-              marginTop: "20px"
+              display: "flex",
+              alignItems: "flex-start",
+              gap: "32px",
+              marginTop: "20px",
+              maxWidth: "100%"
             }}>
-              <h2 style={{
-                color: "#170961",
-                fontWeight: 700,
-                fontFamily: "'Montserrat', Arial, sans-serif",
-                fontSize: "2rem",
-                marginBottom: "14px"
-              }}>
-                Start Your<br />Journey Today!
-              </h2>
               <div style={{
-                color: "#242424",
-                fontSize: "1.08rem",
-                marginBottom: "22px"
+                flex: "0 0 auto",
+                maxWidth: "350px"
               }}>
-                Apply now to kickstart your career with CodingPlayground Technology
+                <h2 style={{
+                  color: "#170961",
+                  fontWeight: 700,
+                  fontFamily: "'Oswald', Arial, sans-serif",
+                  fontSize: "2rem",
+                  marginBottom: "14px"
+                }}>
+                  Start Your<br />Journey Today!
+                </h2>
+                <div style={{
+                  color: "#242424",
+                  fontSize: "1.08rem",
+                  marginBottom: "22px",
+                  fontFamily: "'Nunito', Arial, sans-serif"
+                }}>
+                  Apply now to kickstart your career with CodingPlayground Technology
+                </div>
               </div>
-              <button style={{
-                background: "#1A1064",
-                color: "#fff",
-                border: "none",
-                borderRadius: "12px",
-                fontSize: "1.1rem",
-                fontWeight: 500,
-                padding: "16px 48px",
-                boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
-                cursor: "pointer",
-                transition: "background 0.2s",
-                marginBottom: "8px"
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                justifyContent: "flex-end",
+                gap: "16px",
+                flex: "0 0 auto",
+                marginTop: "80px",
+                marginLeft: "120px"
               }}>
-                Apply Now
-              </button>
-              <span style={{
-                color: "#242424",
-                fontSize: "1rem",
-                marginLeft: "8px"
-              }}>
-                Back to the top
-              </span>
+                <button 
+                  style={{
+                    background: "#1A1064",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "12px",
+                    fontSize: "1.1rem",
+                    fontWeight: 500,
+                    padding: "16px 48px",
+                    boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
+                    cursor: "pointer",
+                    transition: "background 0.2s",
+                    fontFamily: "'Nunito', Arial, sans-serif"
+                  }}
+                  // THIS BUTTON HANDLES THE APPLY NOW ACTION
+                  onClick={() => {
+                    if (onApplyNow) {
+                      onApplyNow(); // This should trigger navigation to ApplicationForm2.jsx in your App.jsx logic
+                    } else {
+                      window.location.href = "/ApplicationForm2";
+                    }
+                  }}
+                >
+                  Apply Now
+                </button>
+                <button 
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  }}
+                  style={{
+                    background: "transparent",
+                    color: "#242424",
+                    border: "none",
+                    fontSize: "1rem",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    fontFamily: "'Nunito', Arial, sans-serif",
+                    padding: "4px 0",
+                    marginLeft: "150px"
+                  }}
+                >
+                  Back to the top
+                </button>
+              </div>
             </div>
           </div>
           {/* Certificate Badge Section */}
@@ -437,7 +491,7 @@ export default function TrainingPrograms() {
                 textAlign: "center",
                 color: "#fff",
                 fontWeight: 700,
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif",
                 pointerEvents: "none"
               }}>
                 <div style={{ fontSize: "22px", lineHeight: "1.1" }}>Certificate</div>

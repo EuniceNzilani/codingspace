@@ -9,6 +9,7 @@ import Partnership from "./Partnerships";
 import ContactUs from "./ContactUs";
 import JoinAcademy from "./JoinAcademy";
 import ApplicationForm from "./ApplicationForm";
+import ApplicationForm2 from "./ApplicationForm2"; // Import ApplicationForm2
 import StartProject from "./StartProject"; // Import StartProject.jsx
 import logo from "C:/Users/SiLa/Downloads/CodingSpace/codingspace/src/assets/Coding PLayground 1.png";
 
@@ -16,14 +17,35 @@ function App() {
   const [activePage, setActivePage] = useState(0);
   const [showJoinAcademy, setShowJoinAcademy] = useState(false);
   const [showApplicationForm, setShowApplicationForm] = useState(false);
+  const [showApplicationForm2, setShowApplicationForm2] = useState(false); // Add state for ApplicationForm2
   const [showStartProject, setShowStartProject] = useState(false); // Control for StartProject
 
   const handleShowJoinAcademy = () => setShowJoinAcademy(true);
   const handleShowApplicationForm = () => setShowApplicationForm(true);
+  const handleShowApplicationForm2 = () => setShowApplicationForm2(true); // Handler for ApplicationForm2
   const handleShowStartProject = () => setShowStartProject(true); // Handler for StartProject
   const handleGoBack = () => {
     setShowJoinAcademy(false);
     setShowApplicationForm(false);
+    setShowApplicationForm2(false); // Reset ApplicationForm2 state
+    setShowStartProject(false);
+  };
+
+  // Navigation handler from ApplicationForm
+  const handleNavigateFromApplicationForm = (pageIndex) => {
+    setActivePage(pageIndex);
+    setShowApplicationForm(false);
+  };
+
+  // Navigation handler from ApplicationForm2
+  const handleNavigateFromApplicationForm2 = (pageIndex) => {
+    setActivePage(pageIndex);
+    setShowApplicationForm2(false);
+  };
+
+  // Navigation handler for StartProject
+  const handleNavigateFromStartProject = (pageIndex) => {
+    setActivePage(pageIndex);
     setShowStartProject(false);
   };
 
@@ -31,7 +53,7 @@ function App() {
     { name: "Home", component: <Home onApplyNow={handleShowJoinAcademy} onStartProject={handleShowStartProject} /> }, // Pass StartProject handler to Home or where relevant
     { name: "About Us", component: <AboutUs /> },
     { name: "Product & Services", component: <ProductServices /> },
-    { name: "Training Programs", component: <TrainingPrograms /> },
+    { name: "Training Programs", component: <TrainingPrograms onApplyNow={handleShowApplicationForm2} /> }, // Pass ApplicationForm2 handler
     { name: "Our Team", component: <Team /> },
     { name: "Careers", component: <Careers onApply={handleShowApplicationForm} /> },
     { name: "Partnership", component: <Partnership /> },
@@ -44,10 +66,17 @@ function App() {
   // Height allocated for nav buttons and underline in center of nav bar
   const navButtonContainerHeight = 42;
 
+  // Determine which page should be highlighted in navigation
+  const getActivePageForNav = () => {
+    if (showApplicationForm) return 5; // Careers page index
+    if (showApplicationForm2) return 3; // Training Programs page index
+    return activePage;
+  };
+
   return (
     <div>
       {/* Custom navigation bar for switching screens */}
-      {(!showJoinAcademy && !showApplicationForm && !showStartProject) && (
+      {(!showJoinAcademy && !showStartProject && !showApplicationForm2) && (
         <nav style={{
           background: "#fff",
           boxShadow: "0 6px 22px rgba(36,36,36,0.08)",
@@ -117,8 +146,8 @@ function App() {
                     style={{
                       background: "none",
                       border: "none",
-                      color: activePage === idx ? "#170961" : "#242424",
-                      fontWeight: activePage === idx ? 700 : 500,
+                      color: getActivePageForNav() === idx ? "#170961" : "#242424",
+                      fontWeight: getActivePageForNav() === idx ? 700 : 500,
                       fontSize: "1.08rem",
                       cursor: "pointer",
                       outline: "none",
@@ -128,12 +157,20 @@ function App() {
                       display: "flex",
                       alignItems: "center",
                     }}
-                    onClick={() => setActivePage(idx)}
+                    onClick={() => {
+                      if (showApplicationForm) {
+                        handleNavigateFromApplicationForm(idx);
+                      } else if (showApplicationForm2) {
+                        handleNavigateFromApplicationForm2(idx);
+                      } else {
+                        setActivePage(idx);
+                      }
+                    }}
                   >
                     {page.name}
                   </button>
                   {/* Selected underline directly below the page name, centered in navbar */}
-                  {activePage === idx && (
+                  {getActivePageForNav() === idx && (
                     <div style={{
                       width: "120%", // Enlarged line width
                       height: "2px", // Reduced thickness
@@ -150,14 +187,26 @@ function App() {
         </nav>
       )}
 
-      {/* Render JoinAcademy, ApplicationForm, StartProject, or selected page */}
+      {/* Render JoinAcademy, ApplicationForm, ApplicationForm2, StartProject, or selected page */}
       <div>
         {showJoinAcademy ? (
           <JoinAcademy onBack={handleGoBack} onApplyNow={handleShowApplicationForm} />
         ) : showApplicationForm ? (
-          <ApplicationForm onBack={handleGoBack} />
+          <ApplicationForm 
+            onBack={handleGoBack} 
+            onNavigate={handleNavigateFromApplicationForm}
+          />
+        ) : showApplicationForm2 ? (
+          <ApplicationForm2 
+            onBack={handleGoBack} 
+            onNavigate={handleNavigateFromApplicationForm2}
+          />
         ) : showStartProject ? (
-          <StartProject onBack={handleGoBack} />
+          <StartProject 
+            onBack={handleGoBack} 
+            onNavigate={handleNavigateFromStartProject}
+            activePage={activePage}
+          />
         ) : (
           pages[activePage].component
         )}

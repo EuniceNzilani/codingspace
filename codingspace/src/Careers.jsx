@@ -12,20 +12,20 @@ export default function Careers({ onApply }) {
     <div style={{
       background: "#fff",
       minHeight: "100vh",
-      fontFamily: "'Inter', Arial, sans-serif",
+      fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
       width: "100vw",
       overflowX: "hidden"
     }}>
       <main style={{
         maxWidth: "950px",
         margin: "0 auto",
-        padding: "50px 10px 40px 10px" // Reduced left/right padding
+        padding: "50px 10px 40px 10px"
       }}>
         {/* Title and subtitle */}
         <h1 style={{
           color: "#170961",
           fontWeight: 900,
-          fontFamily: "'Montserrat', Arial, sans-serif",
+          fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
           fontSize: "2.7rem",
           textAlign: "center",
           marginBottom: "9px"
@@ -36,7 +36,8 @@ export default function Careers({ onApply }) {
           fontSize: "1.22rem",
           color: "#242424",
           textAlign: "center",
-          marginBottom: "32px"
+          marginBottom: "32px",
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
           Join our growing team of innovators, developers, and educators.
         </div>
@@ -47,7 +48,8 @@ export default function Careers({ onApply }) {
           textAlign: "center",
           margin: "0 auto 38px",
           maxWidth: "760px",
-          lineHeight: "1.7"
+          lineHeight: "1.7",
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
           At CodingPlayGround Technologies, we're building a culture of innovation, creativity, and impact. We welcome passionate people at all levels, including entry-level applicants eager to learn. We also offer internships for beginners looking to hone their skills and grow into professionals.
         </div>
@@ -57,7 +59,7 @@ export default function Careers({ onApply }) {
           alignItems: "flex-start",
           gap: "54px",
           justifyContent: "center",
-          marginBottom: "0px", // Remove extra space below
+          marginBottom: "0px",
           flexWrap: "wrap"
         }}>
           {/* Open roles box */}
@@ -73,11 +75,12 @@ export default function Careers({ onApply }) {
               color: "#170961",
               fontWeight: 700,
               fontSize: "1.35rem",
-              marginBottom: "18px"
+              marginBottom: "18px",
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               <span style={{ textDecoration: "underline" }}>Current Open Roles</span>
             </div>
-            <ul style={{ paddingLeft: 0, margin: 0, fontSize: "1.08rem", color: "#242424", listStyle: "none" }}>
+            <ul style={{ paddingLeft: 0, margin: 0, fontSize: "1.08rem", color: "#242424", listStyle: "none", fontFamily: "'Nunito', Arial, sans-serif" }}>
               <li style={{ marginBottom: "13px", display: "flex", alignItems: "center" }}>
                 <span style={{ color: "#170961", fontWeight: 700, marginRight: "11px", fontSize: "1.18rem" }}>✔</span>Software Engineer
               </li>
@@ -114,7 +117,8 @@ export default function Careers({ onApply }) {
                   padding: "16px 38px",
                   boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
                   cursor: "pointer",
-                  transition: "background 0.2s"
+                  transition: "background 0.2s",
+                  fontFamily: "'Nunito', Arial, sans-serif"
                 }}
                 onMouseEnter={(e) => e.target.style.background = "#1a0b70"}
                 onMouseLeave={(e) => e.target.style.background = "#170961"}

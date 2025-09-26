@@ -10,7 +10,7 @@ export default function Home({ onStartProject, onApplyNow }) {
       style={{
         background: "#fff",
         minHeight: "100vh",
-        fontFamily: "'Inter', Arial, sans-serif",
+        fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
         width: "100vw",
         overflowX: "hidden",
       }}
@@ -63,6 +63,7 @@ export default function Home({ onStartProject, onApplyNow }) {
             flexDirection: "column",
             justifyContent: "center",
             minHeight: "100vh",
+            fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
           }}
         >
           <div style={{ position: "relative", display: "inline-block", marginBottom: "18px" }}>
@@ -88,7 +89,7 @@ export default function Home({ onStartProject, onApplyNow }) {
                 lineHeight: "1.15",
                 marginBottom: "0px",
                 letterSpacing: "-1.5px",
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 display: "inline-block",
                 position: "relative",
               }}
@@ -124,6 +125,7 @@ export default function Home({ onStartProject, onApplyNow }) {
               color: "#242424",
               marginBottom: "38px",
               lineHeight: "1.6",
+              fontFamily: "'Nunito', Arial, sans-serif",
             }}
           >
             We build, we train, we launch. At CodingPlayGround Technologies, we transform ideas into<br />
@@ -150,6 +152,7 @@ export default function Home({ onStartProject, onApplyNow }) {
                 boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
                 cursor: "pointer",
                 transition: "background 0.2s",
+                fontFamily: "'Nunito', Arial, sans-serif",
               }}
               onClick={onStartProject}
             >
@@ -167,6 +170,7 @@ export default function Home({ onStartProject, onApplyNow }) {
                 boxShadow: "0 4px 16px rgba(23,9,97,0.11)",
                 cursor: "pointer",
                 transition: "background 0.2s",
+                fontFamily: "'Nunito', Arial, sans-serif",
               }}
               onClick={onApplyNow}
             >
@@ -174,19 +178,19 @@ export default function Home({ onStartProject, onApplyNow }) {
             </button>
           </div>
           {/* WhatsApp */}
-          <div style={{ textAlign: "center", marginTop: "46px" }}>
+          <div style={{ textAlign: "center", marginTop: "46px", fontFamily: "'Nunito', Arial, sans-serif" }}>
             <a
               href="https://wa.me/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", fontFamily: "'Nunito', Arial, sans-serif" }}
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
                 alt="WhatsApp"
                 style={{ width: 48, height: 48 }}
               />
-              <div style={{ color: "#242424", fontSize: "1.02rem", marginTop: 8 }}>
+              <div style={{ color: "#242424", fontSize: "1.02rem", marginTop: 8, fontFamily: "'Nunito', Arial, sans-serif" }}>
                 Chat on WhatsApp
               </div>
             </a>

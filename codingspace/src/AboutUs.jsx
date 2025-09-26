@@ -5,8 +5,8 @@ export default function AboutUs() {
   return (
     <div style={{
       background: "#fff",
-      minHeight: "100vh", // Allows scrolling if content overflows
-      fontFamily: "'Inter', Arial, sans-serif",
+      minHeight: "100vh",
+      fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
       paddingBottom: "60px",
       boxSizing: "border-box",
       width: "100vw",
@@ -23,7 +23,7 @@ export default function AboutUs() {
         <h1 style={{
           color: "#170961",
           fontWeight: 900,
-          fontFamily: "'Montserrat', Arial, sans-serif",
+          fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
           fontSize: "2.2rem",
           textAlign: "center",
           marginBottom: "6px"
@@ -35,7 +35,8 @@ export default function AboutUs() {
           fontSize: "1.1rem",
           color: "#242424",
           textAlign: "center",
-          marginBottom: "20px"
+          marginBottom: "20px",
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
           We are a Software Development Company and Coding Institution<br />
           headquartered in Nigeria.
@@ -62,14 +63,16 @@ export default function AboutUs() {
               fontWeight: 700,
               fontSize: "1.12rem",
               color: "#242424",
-              marginBottom: "12px"
+              marginBottom: "12px",
+              fontFamily: "'Oswald', Arial, sans-serif" // Oswald for heading
             }}>
               What we do:
             </div>
             <div style={{
               fontSize: "1rem",
               color: "#242424",
-              lineHeight: "1.7"
+              lineHeight: "1.7",
+              fontFamily: "'Nunito', Arial, sans-serif" // Nunito for body
             }}>
               Help thinkers and entrepreneurs bring their bold ideas to life.<br />
               Build, maintain, and scale world-class software solutions.<br />
@@ -85,7 +88,7 @@ export default function AboutUs() {
             height: "240px",
             background: "#fff",
             borderRadius: "10px",
-            boxShadow: "0 2px 8px rgba(36,36,36,0.09)", // <--- reduced shadow
+            boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
             flex: "0 0 420px"
           }}>
             <img
@@ -115,7 +118,8 @@ export default function AboutUs() {
             fontWeight: 700,
             fontSize: "1.1rem",
             color: "#242424",
-            marginBottom: "8px"
+            marginBottom: "8px",
+            fontFamily: "'Oswald', Arial, sans-serif" // Oswald for heading
           }}>
             MISSION
           </div>
@@ -123,7 +127,8 @@ export default function AboutUs() {
             fontSize: "0.95rem",
             color: "#242424",
             marginBottom: "15px",
-            lineHeight: "1.6"
+            lineHeight: "1.6",
+            fontFamily: "'Nunito', Arial, sans-serif" // Nunito for body
           }}>
             To empower thinkers, businesses, and learners by building innovative software solutions and delivering world-class technology education that transforms ideas into scalable impact.
           </div>
@@ -131,14 +136,16 @@ export default function AboutUs() {
             fontWeight: 700,
             fontSize: "1.1rem",
             color: "#242424",
-            marginBottom: "8px"
+            marginBottom: "8px",
+            fontFamily: "'Oswald', Arial, sans-serif" // Oswald for heading
           }}>
             VISION
           </div>
           <div style={{
             fontSize: "0.95rem",
             color: "#242424",
-            lineHeight: "1.6"
+            lineHeight: "1.6",
+            fontFamily: "'Nunito', Arial, sans-serif" // Nunito for body
           }}>
             To become Africa's leading tech powerhouse, blending innovation with education, nurturing talent, and driving sustainable growth in the global digital economy.
           </div>

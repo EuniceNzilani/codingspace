@@ -7,7 +7,7 @@ export default function Partnership() {
       style={{
         background: "#fff",
         minHeight: "100vh",
-        fontFamily: "'Inter', Arial, sans-serif",
+        fontFamily: "'Nunito', Arial, sans-serif", // Nunito for bodies
         width: "100vw",
         overflowX: "hidden"
       }}
@@ -24,7 +24,7 @@ export default function Partnership() {
           style={{
             color: "#170961",
             fontWeight: 900,
-            fontFamily: "'Montserrat', Arial, sans-serif",
+            fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
             fontSize: "2.7rem",
             textAlign: "center",
             marginBottom: "9px",
@@ -38,6 +38,7 @@ export default function Partnership() {
             color: "#242424",
             textAlign: "center",
             marginBottom: "32px",
+            fontFamily: "'Nunito', Arial, sans-serif"
           }}
         >
           Great things in business are never done by one person, they're<br />
@@ -51,7 +52,7 @@ export default function Partnership() {
             gap: "54px",
             justifyContent: "center",
             marginBottom: "45px",
-            flexWrap: "wrap", // Helps avoid overflow on smaller screens
+            flexWrap: "wrap",
           }}
         >
           <div>
@@ -61,6 +62,7 @@ export default function Partnership() {
                 fontWeight: 700,
                 fontSize: "1.35rem",
                 marginBottom: "18px",
+                fontFamily: "'Oswald', Arial, sans-serif"
               }}
             >
               <span style={{ textDecoration: "underline" }}>We collaborate with:</span>
@@ -73,6 +75,7 @@ export default function Partnership() {
                 padding: "28px 30px",
                 minWidth: "320px",
                 maxWidth: "370px",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               <ul
@@ -82,6 +85,7 @@ export default function Partnership() {
                   fontSize: "1.08rem",
                   color: "#242424",
                   listStyle: "none",
+                  fontFamily: "'Nunito', Arial, sans-serif"
                 }}
               >
                 <li style={{ marginBottom: "13px", display: "flex", alignItems: "center" }}>
@@ -109,7 +113,7 @@ export default function Partnership() {
           </div>
         </div>
         {/* Contact section */}
-        <div style={{ fontSize: "1.08rem", color: "#242424", textAlign: "left", marginBottom: "16px" }}>
+        <div style={{ fontSize: "1.08rem", color: "#242424", textAlign: "left", marginBottom: "16px", fontFamily: "'Nunito', Arial, sans-serif" }}>
           If you are interested in collaborating with Us, send us an email to:
         </div>
         <a
@@ -121,6 +125,7 @@ export default function Partnership() {
             textDecoration: "underline",
             marginBottom: "30px",
             display: "inline-block",
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}
         >
           careers@codingplayground.tech

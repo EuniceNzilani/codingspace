@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ApplicationForm = () => {
+const ApplicationForm = ({ onBack, onNavigate }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,6 +55,8 @@ const ApplicationForm = () => {
       resume: null
     });
     setFileName('Inbox');
+    // Navigate back to the main app after successful submission
+    onBack();
   };
 
   const uploadIconClick = () => {
@@ -65,7 +67,7 @@ const ApplicationForm = () => {
     <div style={{
       background: '#fff',
       minHeight: '100vh',
-      fontFamily: "'Inter', Arial, sans-serif",
+      fontFamily: "'Nunito', Arial, sans-serif",
       width: '100vw',
       overflowX: 'hidden',
       margin: 0,
@@ -77,24 +79,25 @@ const ApplicationForm = () => {
         padding: '36px 10px 0 10px',
       }}>
         <h1 style={{
-          color: '#000000',
+          color: '#170961',
           fontWeight: '900',
-          fontFamily: "'Montserrat', Arial, sans-serif",
+          fontFamily: "'Oswald', Arial, sans-serif",
           fontSize: '2.6rem',
           textAlign: 'center',
           marginBottom: '7px',
           marginTop: '0px',
           letterSpacing: '1px',
         }}>
-          Application Form
+          Join Our Team
         </h1>
         <div style={{
           fontSize: '1.12rem',
-          color: '#000000',
+          color: '#242424',
           textAlign: 'center',
           marginBottom: '34px',
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
-          Join our team by applying to your preferred available role
+          Apply to your preferred available role and become part of our innovative team
         </div>
         
         <div style={{
@@ -110,8 +113,8 @@ const ApplicationForm = () => {
           <div style={{
             fontWeight: '700',
             fontSize: '1.13rem',
-            fontFamily: "'Montserrat', Arial, sans-serif",
-            color: '#000000',
+            fontFamily: "'Oswald', Arial, sans-serif",
+            color: '#170961',
             marginBottom: '18px',
             textAlign: 'center',
           }}>
@@ -124,7 +127,8 @@ const ApplicationForm = () => {
             fontWeight: '500',
             fontSize: '1rem',
             marginBottom: '3px',
-            color: '#000000',
+            color: '#242424',
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>Full Name</label>
           <input
             type="text"
@@ -143,6 +147,7 @@ const ApplicationForm = () => {
               outline: 'none',
               boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
               boxSizing: 'border-box',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}
           />
 
@@ -152,7 +157,8 @@ const ApplicationForm = () => {
             fontWeight: '500',
             fontSize: '1rem',
             marginBottom: '3px',
-            color: '#000000',
+            color: '#242424',
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>Email Address</label>
           <input
             type="email"
@@ -171,6 +177,7 @@ const ApplicationForm = () => {
               outline: 'none',
               boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
               boxSizing: 'border-box',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}
           />
 
@@ -180,7 +187,8 @@ const ApplicationForm = () => {
             fontWeight: '500',
             fontSize: '1rem',
             marginBottom: '3px',
-            color: '#000000',
+            color: '#242424',
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>Interested Role</label>
           <select
             name="role"
@@ -198,7 +206,8 @@ const ApplicationForm = () => {
               boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
               background: '#fff',
               boxSizing: 'border-box',
-              color: '#000000',
+              color: '#242424',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}
           >
             <option value="" disabled>Select your interested role</option>
@@ -219,7 +228,8 @@ const ApplicationForm = () => {
                 fontWeight: '500',
                 fontSize: '1rem',
                 marginBottom: '3px',
-                color: '#000000',
+                color: '#242424',
+                fontFamily: "'Oswald', Arial, sans-serif"
               }}>LinkedIn profile (URL)</label>
               <input
                 type="url"
@@ -237,6 +247,7 @@ const ApplicationForm = () => {
                   outline: 'none',
                   boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
                   boxSizing: 'border-box',
+                  fontFamily: "'Nunito', Arial, sans-serif"
                 }}
               />
             </div>
@@ -247,7 +258,8 @@ const ApplicationForm = () => {
                 fontWeight: '500',
                 fontSize: '1rem',
                 marginBottom: '3px',
-                color: '#000000',
+                color: '#242424',
+                fontFamily: "'Oswald', Arial, sans-serif"
               }}>Github link (URL)</label>
               <input
                 type="url"
@@ -265,6 +277,7 @@ const ApplicationForm = () => {
                   outline: 'none',
                   boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
                   boxSizing: 'border-box',
+                  fontFamily: "'Nunito', Arial, sans-serif"
                 }}
               />
             </div>
@@ -276,7 +289,8 @@ const ApplicationForm = () => {
             fontWeight: '500',
             fontSize: '1rem',
             marginBottom: '3px',
-            color: '#000000',
+            color: '#242424',
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>Portfolio</label>
           <input
             type="url"
@@ -294,6 +308,7 @@ const ApplicationForm = () => {
               outline: 'none',
               boxShadow: '0 2px 8px rgba(36,36,36,0.09)',
               boxSizing: 'border-box',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}
           />
 
@@ -303,7 +318,8 @@ const ApplicationForm = () => {
             fontWeight: '500',
             fontSize: '1rem',
             marginBottom: '3px',
-            color: '#000000',
+            color: '#242424',
+            fontFamily: "'Oswald', Arial, sans-serif"
           }}>Upload a Resume</label>
           <div onClick={uploadIconClick} style={{
             marginBottom: '18px',
@@ -316,6 +332,7 @@ const ApplicationForm = () => {
             position: 'relative',
             width: '250px',
             display: 'inline-block',
+            fontFamily: "'Nunito', Arial, sans-serif"
           }}>
             <input
               id="resume-input"
@@ -332,12 +349,13 @@ const ApplicationForm = () => {
             </div>
             <div style={{
               marginTop: '6px',
-              color: '#000000',
+              color: '#242424',
               fontWeight: '500',
               fontSize: '0.9rem',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}>
               Upload a Resume here (PNG/PDF)<br />
-              <span style={{ color: formData.resume ? '#22C55E' : 'inherit' }}>
+              <span style={{ color: formData.resume ? '#14A388' : 'inherit' }}>
                 {fileName}
               </span>
             </div>
@@ -359,6 +377,7 @@ const ApplicationForm = () => {
                 cursor: 'pointer',
                 width: '210px',
                 marginTop: '18px',
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Submit Application
@@ -383,23 +402,26 @@ const ApplicationForm = () => {
             textAlign: 'center',
             minWidth: '360px',
             maxWidth: '90vw',
+            fontFamily: "'Nunito', Arial, sans-serif"
           }}>
             <div style={{ marginBottom: '18px' }}>
               <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
-                <circle cx="27" cy="27" r="27" fill="#22C55E"/>
+                <circle cx="27" cy="27" r="27" fill="#14A388"/>
                 <path d="M18 28l6.3 6.3L36 22.6" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="39" cy="12" r="2.2" fill="#22C55E"/>
-                <circle cx="14" cy="16" r="1.6" fill="#22C55E"/>
-                <circle cx="46" cy="26" r="1.2" fill="#22C55E"/>
+                <circle cx="39" cy="12" r="2.2" fill="#14A388"/>
+                <circle cx="14" cy="16" r="1.6" fill="#14A388"/>
+                <circle cx="46" cy="26" r="1.2" fill="#14A388"/>
               </svg>
             </div>
             <div style={{
-              fontWeight: '600', fontSize: '1.25rem', color: '#000000', marginBottom: '9px',
+              fontWeight: '600', fontSize: '1.25rem', color: '#242424', marginBottom: '9px',
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               Application Submitted Successfully
             </div>
             <div style={{
-              color: '#000000', fontSize: '1.05rem', marginBottom: '7px',
+              color: '#7A7A7A', fontSize: '1.05rem', marginBottom: '7px',
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}>
               You will receive an email once the process is complete
             </div>
@@ -407,7 +429,7 @@ const ApplicationForm = () => {
               onClick={closePopup}
               style={{
                 marginTop: '14px',
-                background: '#22C55E',
+                background: '#14A388',
                 color: '#fff',
                 border: 'none',
                 padding: '10px 32px',
@@ -416,6 +438,7 @@ const ApplicationForm = () => {
                 fontSize: '1rem',
                 boxShadow: '0 2px 8px rgba(36,36,36,0.13)',
                 cursor: 'pointer',
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >Close</button>
           </div>

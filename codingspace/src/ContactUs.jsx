@@ -27,7 +27,7 @@ export default function ContactUs() {
     <div style={{
       background: "#fff",
       minHeight: "100vh",
-      fontFamily: "'Inter', Arial, sans-serif",
+      fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
       width: "100vw",
       overflowX: "hidden"
     }}>
@@ -40,7 +40,7 @@ export default function ContactUs() {
         <h1 style={{
           color: "#170961",
           fontWeight: 900,
-          fontFamily: "'Montserrat', Arial, sans-serif",
+          fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
           fontSize: "2.7rem",
           textAlign: "center",
           marginBottom: "7px",
@@ -53,7 +53,8 @@ export default function ContactUs() {
           fontSize: "1.18rem",
           color: "#242424",
           textAlign: "center",
-          marginBottom: "32px"
+          marginBottom: "32px",
+          fontFamily: "'Nunito', Arial, sans-serif"
         }}>
           CodingPlayGround Technologies is ready to provide the right solution according to your needs
         </div>
@@ -79,7 +80,7 @@ export default function ContactUs() {
               fontWeight: 700,
               fontSize: "1.4rem",
               marginBottom: "18px",
-              fontFamily: "'Montserrat', Arial, sans-serif"
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               Get In touch
             </div>
@@ -94,8 +95,8 @@ export default function ContactUs() {
                 background: "#170961"
               }} />
               <div>
-                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Head Office</div>
-                <div style={{ color: "#242424", fontSize: "1rem" }}>
+                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Oswald', Arial, sans-serif" }}>Head Office</div>
+                <div style={{ color: "#242424", fontSize: "1rem", fontFamily: "'Nunito', Arial, sans-serif" }}>
                   Heritage Plaza, No. 30 S.N Okoronkwo, Kubwa,<br />
                   Federal Capital Territory, Abuja
                 </div>
@@ -112,8 +113,8 @@ export default function ContactUs() {
                 background: "#170961"
               }} />
               <div>
-                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Email Us</div>
-                <div style={{ color: "#242424", fontSize: "1rem" }}>
+                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Oswald', Arial, sans-serif" }}>Email Us</div>
+                <div style={{ color: "#242424", fontSize: "1rem", fontFamily: "'Nunito', Arial, sans-serif" }}>
                   info@codingplayground.tech
                 </div>
               </div>
@@ -129,8 +130,8 @@ export default function ContactUs() {
                 background: "#170961"
               }} />
               <div>
-                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Montserrat', Arial, sans-serif" }}>Call Us</div>
-                <div style={{ color: "#242424", fontSize: "1rem" }}>
+                <div style={{ fontWeight: 700, color: "#170961", fontSize: "1.08rem", fontFamily: "'Oswald', Arial, sans-serif" }}>Call Us</div>
+                <div style={{ color: "#242424", fontSize: "1rem", fontFamily: "'Nunito', Arial, sans-serif" }}>
                   Phone: +234 904 2512 356<br />
                   WhatsApp: +234 904 2512 356
                 </div>
@@ -157,11 +158,11 @@ export default function ContactUs() {
               fontWeight: 700,
               fontSize: "1.4rem",
               marginBottom: "18px",
-              fontFamily: "'Montserrat', Arial, sans-serif"
+              fontFamily: "'Oswald', Arial, sans-serif"
             }}>
               Message Us
             </div>
-            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Name</label>
+            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px", fontFamily: "'Oswald', Arial, sans-serif" }}>Name</label>
             <input
               type="text"
               name="name"
@@ -175,10 +176,11 @@ export default function ContactUs() {
                 borderRadius: "9px",
                 border: "none",
                 outline: "none",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
+                boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             />
-            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Subject</label>
+            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px", fontFamily: "'Oswald', Arial, sans-serif" }}>Subject</label>
             <input
               type="text"
               name="subject"
@@ -192,10 +194,11 @@ export default function ContactUs() {
                 borderRadius: "9px",
                 border: "none",
                 outline: "none",
-                boxShadow: "0 2px 8px rgba(36,36,36,0.09)"
+                boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             />
-            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px" }}>Message</label>
+            <label style={{ fontWeight: 500, fontSize: "1rem", marginBottom: "3px", fontFamily: "'Oswald', Arial, sans-serif" }}>Message</label>
             <textarea
               name="message"
               value={form.message}
@@ -210,7 +213,8 @@ export default function ContactUs() {
                 border: "none",
                 outline: "none",
                 boxShadow: "0 2px 8px rgba(36,36,36,0.09)",
-                resize: "none"
+                resize: "none",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             />
             <button
@@ -228,7 +232,8 @@ export default function ContactUs() {
                 width: "140px",
                 alignSelf: "center",
                 marginTop: "8px",
-                marginBottom: "2px"
+                marginBottom: "2px",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Send
@@ -256,16 +261,16 @@ export default function ContactUs() {
             marginBottom: "9px"
           }}>
             <div style={{ minWidth: "180px" }}>
-              <div style={{ fontWeight: 700, fontSize: "1.3rem", marginBottom: "6px", fontFamily: "'Montserrat', Arial, sans-serif" }}>
+              <div style={{ fontWeight: 700, fontSize: "1.3rem", marginBottom: "6px", fontFamily: "'Oswald', Arial, sans-serif" }}>
                 Coding
               </div>
-              <div style={{ fontSize: "1rem" }}>CodingPlayGround Technologies</div>
+              <div style={{ fontSize: "1rem", fontFamily: "'Nunito', Arial, sans-serif" }}>CodingPlayGround Technologies</div>
             </div>
             <div style={{ textAlign: "center", minWidth: "220px" }}>
-              <div style={{ marginBottom: "5px" }}>Join our Community on</div>
+              <div style={{ marginBottom: "5px", fontFamily: "'Nunito', Arial, sans-serif" }}>Join our Community on</div>
               <div style={{
                 display: "flex",
-                gap: "0px", // No space between boxes
+                gap: "0px",
                 justifyContent: "center",
                 marginBottom: "3px"
               }}>
@@ -273,7 +278,7 @@ export default function ContactUs() {
                   <div
                     key={i}
                     style={{
-                      background: "#170961", // Blue box
+                      background: "#170961",
                       borderRadius: "7px",
                       width: "22px",
                       height: "20px",
@@ -298,7 +303,7 @@ export default function ContactUs() {
                 ))}
               </div>
             </div>
-            <div style={{ textAlign: "right", fontSize: "1.05rem", minWidth: "180px" }}>
+            <div style={{ textAlign: "right", fontSize: "1.05rem", minWidth: "180px", fontFamily: "'Nunito', Arial, sans-serif" }}>
               Website<br />
               <span style={{ color: "#fff", textDecoration: "underline" }}>codingplayground.tech</span>
             </div>
@@ -312,7 +317,8 @@ export default function ContactUs() {
           <div style={{
             textAlign: "center",
             fontSize: "0.98rem",
-            marginTop: "10px"
+            marginTop: "10px",
+            fontFamily: "'Nunito', Arial, sans-serif"
           }}>
             ©2025 All rights reserved
           </div>

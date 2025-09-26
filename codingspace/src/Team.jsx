@@ -24,13 +24,13 @@ export default function Team() {
     minHeight: "100vh",
     padding: "48px 20px",
     background: "#fff",
-    fontFamily: "'Inter', Arial, sans-serif",
-    width: "100vw", // Use viewport width instead of 100%
+    fontFamily: "'Nunito', Arial, sans-serif", // Nunito for body
+    width: "100vw",
     maxWidth: "100%",
     boxSizing: "border-box",
     margin: "0",
     left: "50%",
-    transform: "translateX(-50%)", // Force horizontal centering
+    transform: "translateX(-50%)",
     textAlign: "center"
   };
 
@@ -45,7 +45,7 @@ export default function Team() {
           gap: "48px",
           width: "100%",
           maxWidth: "1000px",
-          margin: "0 auto" // Center the content container
+          margin: "0 auto"
         }}
       >
         {/* Title Section */}
@@ -61,7 +61,7 @@ export default function Team() {
             style={{
               color: "#170961",
               fontWeight: 900,
-              fontFamily: "'Montserrat', Arial, sans-serif",
+              fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
               fontSize: "2.7rem",
               textAlign: "center",
               margin: 0,
@@ -77,7 +77,8 @@ export default function Team() {
               textAlign: "center",
               fontWeight: 600,
               margin: 0,
-              width: "100%"
+              width: "100%",
+              fontFamily: "'Nunito', Arial, sans-serif"
             }}
           >
             We are builders, dreamers, and mentors.
@@ -125,7 +126,7 @@ export default function Team() {
                 color: "#170961",
                 fontWeight: 600,
                 fontSize: "1.15rem",
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 borderRadius: "10px",
                 padding: "8px 20px",
                 boxShadow: "0 2px 10px rgba(36,36,36,0.10)",
@@ -152,7 +153,7 @@ export default function Team() {
               style={{
                 color: "#170961",
                 fontWeight: 900,
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 fontSize: "1.45rem",
                 margin: 0,
                 textAlign: "left"
@@ -166,7 +167,8 @@ export default function Team() {
                 fontSize: "1.05rem",
                 lineHeight: "1.7",
                 margin: 0,
-                textAlign: "left"
+                textAlign: "left",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Director of CodingPlayGround Technologies, I'm passionate about transforming ideas into scalable tech solutions. With experience in software development, product management, and startup consulting, I've led projects that bridge innovation and impact. At CodingPlayGround, my mission is to empower businesses and train the next generation of tech experts.
@@ -262,7 +264,7 @@ export default function Team() {
               style={{
                 color: "#170961",
                 fontWeight: 900,
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 fontSize: "1.15rem",
                 margin: 0,
                 textAlign: "center",
@@ -277,7 +279,8 @@ export default function Team() {
                 fontSize: "1rem",
                 margin: 0,
                 textAlign: "center",
-                width: "100%"
+                width: "100%",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Lead Frontend Developer
@@ -310,7 +313,7 @@ export default function Team() {
               style={{
                 color: "#170961",
                 fontWeight: 900,
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 fontSize: "1.15rem",
                 margin: 0,
                 textAlign: "center",
@@ -325,7 +328,8 @@ export default function Team() {
                 fontSize: "1rem",
                 margin: 0,
                 textAlign: "center",
-                width: "100%"
+                width: "100%",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Lead UI/UX Designer
@@ -358,7 +362,7 @@ export default function Team() {
               style={{
                 color: "#170961",
                 fontWeight: 900,
-                fontFamily: "'Montserrat', Arial, sans-serif",
+                fontFamily: "'Oswald', Arial, sans-serif", // Oswald for heading
                 fontSize: "1.15rem",
                 margin: 0,
                 textAlign: "center",
@@ -373,7 +377,8 @@ export default function Team() {
                 fontSize: "1rem",
                 margin: 0,
                 textAlign: "center",
-                width: "100%"
+                width: "100%",
+                fontFamily: "'Nunito', Arial, sans-serif"
               }}
             >
               Lead Backend Developer
