@@ -265,7 +265,7 @@ export default function ContactUs() {
               <div style={{ marginBottom: "5px" }}>Join our Community on</div>
               <div style={{
                 display: "flex",
-                gap: "16px",
+                gap: "0px", // No space between boxes
                 justifyContent: "center",
                 marginBottom: "3px"
               }}>
@@ -273,10 +273,10 @@ export default function ContactUs() {
                   <div
                     key={i}
                     style={{
-                      background: "#fff",
+                      background: "#170961", // Blue box
                       borderRadius: "7px",
-                      width: "30px",
-                      height: "27px",
+                      width: "22px",
+                      height: "20px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -287,8 +287,8 @@ export default function ContactUs() {
                       src={src}
                       alt="Community Icon"
                       style={{
-                        width: "22px",
-                        height: "22px",
+                        width: "15px",
+                        height: "15px",
                         objectFit: "contain",
                         display: "block"
                       }}
