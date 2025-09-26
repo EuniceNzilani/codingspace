@@ -13,7 +13,6 @@ import ApplicationForm2 from "./ApplicationForm2"; // Import ApplicationForm2
 import StartProject from "./StartProject"; // Import StartProject.jsx
 import playgroundLogo from "./assets/Coding PLayground 1.png";
 
-
 function App() {
   const [activePage, setActivePage] = useState(0);
   const [showJoinAcademy, setShowJoinAcademy] = useState(false);
@@ -51,7 +50,7 @@ function App() {
   };
 
   const pages = [
-    { name: "Home", component: <Home onApplyNow={handleShowJoinAcademy} onStartProject={handleShowStartProject} /> }, // Pass StartProject handler to Home or where relevant
+    { name: "Home", component: <Home onApplyNow={handleShowJoinAcademy} onStartProject={handleShowStartProject} /> }, // Pass StartProject handler
     { name: "About Us", component: <AboutUs /> },
     { name: "Product & Services", component: <ProductServices /> },
     { name: "Training Programs", component: <TrainingPrograms onApplyNow={handleShowApplicationForm2} /> }, // Pass ApplicationForm2 handler
@@ -64,10 +63,8 @@ function App() {
 
   // NAVBAR HEIGHT
   const navBarHeight = 78;
-  // Height allocated for nav buttons and underline in center of nav bar
   const navButtonContainerHeight = 42;
 
-  // Determine which page should be highlighted in navigation
   const getActivePageForNav = () => {
     if (showApplicationForm) return 5; // Careers page index
     if (showApplicationForm2) return 3; // Training Programs page index
@@ -76,47 +73,54 @@ function App() {
 
   return (
     <div>
-      {/* Custom navigation bar for switching screens */}
+      {/* Custom navigation bar */}
       {(!showJoinAcademy && !showStartProject && !showApplicationForm2) && (
-        <nav style={{
-          background: "#fff",
-          boxShadow: "0 6px 22px rgba(36,36,36,0.08)",
-          fontFamily: "'Inter', Arial, sans-serif",
-          display: "flex",
-          alignItems: "center",
-          height: `${navBarHeight}px`,
-          position: "relative",
-          zIndex: 12,
-        }}>
-          {/* Enlarged logo at the left end */}
-          <div style={{
-            height: `${navBarHeight}px`,
+        <nav
+          style={{
+            background: "#fff",
+            boxShadow: "0 6px 22px rgba(36,36,36,0.08)",
+            fontFamily: "'Inter', Arial, sans-serif",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: "26px",
-            paddingRight: "10px"
-          }}>
+            height: `${navBarHeight}px`,
+            position: "relative",
+            zIndex: 12,
+          }}
+        >
+          {/* Enlarged logo */}
+          <div
+            style={{
+              height: `${navBarHeight}px`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              paddingLeft: "26px",
+              paddingRight: "10px",
+            }}
+          >
             <img
-              src={logo}
+              src={playgroundLogo}
               alt="Coding Playground Logo"
               style={{
                 height: "58px",
                 width: "auto",
-                objectFit: "contain"
+                objectFit: "contain",
               }}
             />
           </div>
+
           {/* Navigation buttons */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            flex: 1,
-            height: `${navBarHeight}px`,
-            marginLeft: "14px",
-            position: "relative",
-            justifyContent: "flex-start",
-          }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flex: 1,
+              height: `${navBarHeight}px`,
+              marginLeft: "14px",
+              position: "relative",
+              justifyContent: "flex-start",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -140,7 +144,7 @@ function App() {
                     justifyContent: "center",
                     height: "100%",
                     position: "relative",
-                    padding: "0 18px"
+                    padding: "0 18px",
                   }}
                 >
                   <button
@@ -170,16 +174,19 @@ function App() {
                   >
                     {page.name}
                   </button>
-                  {/* Selected underline directly below the page name, centered in navbar */}
+
+                  {/* Underline for active page */}
                   {getActivePageForNav() === idx && (
-                    <div style={{
-                      width: "120%", // Enlarged line width
-                      height: "2px", // Reduced thickness
-                      background: "#170961",
-                      borderRadius: "3px",
-                      marginTop: "4px",
-                      transition: "width 0.23s"
-                    }} />
+                    <div
+                      style={{
+                        width: "120%",
+                        height: "2px",
+                        background: "#170961",
+                        borderRadius: "3px",
+                        marginTop: "4px",
+                        transition: "width 0.23s",
+                      }}
+                    />
                   )}
                 </div>
               ))}
@@ -188,26 +195,16 @@ function App() {
         </nav>
       )}
 
-      {/* Render JoinAcademy, ApplicationForm, ApplicationForm2, StartProject, or selected page */}
+      {/* Main content */}
       <div>
         {showJoinAcademy ? (
           <JoinAcademy onBack={handleGoBack} onApplyNow={handleShowApplicationForm} />
         ) : showApplicationForm ? (
-          <ApplicationForm 
-            onBack={handleGoBack} 
-            onNavigate={handleNavigateFromApplicationForm}
-          />
+          <ApplicationForm onBack={handleGoBack} onNavigate={handleNavigateFromApplicationForm} />
         ) : showApplicationForm2 ? (
-          <ApplicationForm2 
-            onBack={handleGoBack} 
-            onNavigate={handleNavigateFromApplicationForm2}
-          />
+          <ApplicationForm2 onBack={handleGoBack} onNavigate={handleNavigateFromApplicationForm2} />
         ) : showStartProject ? (
-          <StartProject 
-            onBack={handleGoBack} 
-            onNavigate={handleNavigateFromStartProject}
-            activePage={activePage}
-          />
+          <StartProject onBack={handleGoBack} onNavigate={handleNavigateFromStartProject} activePage={activePage} />
         ) : (
           pages[activePage].component
         )}
