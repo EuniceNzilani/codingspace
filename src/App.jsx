@@ -11,7 +11,8 @@ import JoinAcademy from "./JoinAcademy";
 import ApplicationForm from "./ApplicationForm";
 import ApplicationForm2 from "./ApplicationForm2"; // Import ApplicationForm2
 import StartProject from "./StartProject"; // Import StartProject.jsx
-import logo from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/Coding PLayground 1.png";
+import playgroundLogo from "./assets/Coding PLayground 1.png";
+
 
 function App() {
   const [activePage, setActivePage] = useState(0);

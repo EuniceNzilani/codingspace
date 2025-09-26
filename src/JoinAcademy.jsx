@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 
 // Import images
-import logo from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/Coding PLayground 1.png";
-import bgHome from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/image 18.png";
-import valuePropImg from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/Group 177.png";
-import uniqueBenefitImg from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/image 25.png";
-import amakaImg from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/image 21.png";
-import davidImg from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/Mask group3.png";
-import partnerImg from "C:/Users/SiLa/Downloads/CodingSpace/src/assets/image 22.png";
+import logo from "./assets/Coding PLayground 1.png";
+import bgHome from "./assets/image 18.png";
+import valuePropImg from "./assets/Group 177.png";
+import uniqueBenefitImg from "./assets/image 25.png";
+import amakaImg from "./assets/image 21.png";
+import davidImg from "./assets/Mask group3.png";
+import partnerImg from "./assets/image 22.png";
 
 const navItems = [
   { label: "Home", ref: "home" },
